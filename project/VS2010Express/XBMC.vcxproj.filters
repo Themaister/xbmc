@@ -274,6 +274,9 @@
     <Filter Include="games\tags">
       <UniqueIdentifier>{f8ab840e-9400-4a7f-ac25-79ec806bd76c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="games\libretro">
+      <UniqueIdentifier>{d117ceda-5fb0-4206-aca8-ef4f98aa4bd0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="filesystem\test">
       <UniqueIdentifier>{6a33362b-e68d-45ec-8bcc-057d8caf5de6}</UniqueIdentifier>
     </Filter>
@@ -2860,6 +2863,12 @@
     </ClCompile>
     <ClCompile Include="..\..\xbmc\games\tags\GameInfoTag.cpp">
       <Filter>games\tags</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xbmc\games\GameClientFactory.cpp">
+      <Filter>games</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\xbmc\games\GameClient.cpp">
+      <Filter>games</Filter>
     </ClCompile>
     <ClCompile Include="..\..\xbmc\utils\test\TestFileOperationJob.cpp">
       <Filter>utils\test</Filter>
@@ -5814,6 +5823,18 @@
     </ClInclude>
     <ClInclude Include="..\..\xbmc\games\tags\GameboyTag.h">
       <Filter>games\tags</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\games\GameClientFactory.h">
+      <Filter>games</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\games\GameClient.h">
+      <Filter>games</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\games\GameClientDLL.h">
+      <Filter>games</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\games\libretro\libretro.h">
+      <Filter>games\libretro</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\network\upnp\UPnP.h">
       <Filter>network\upnp</Filter>

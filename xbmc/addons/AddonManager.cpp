@@ -40,6 +40,10 @@
 #include "DllPVRClient.h"
 #include "pvr/addons/PVRClient.h"
 #endif
+#ifdef HAS_GAMECLIENTS
+#include "games/GameClientDLL.h"
+#include "games/GameClient.h"
+#endif
 //#ifdef HAS_SCRAPERS
 #include "Scraper.h"
 //#endif
@@ -115,6 +119,7 @@ AddonPtr CAddonMgr::Factory(const cp_extension_t *props)
     case ADDON_VIZ:
     case ADDON_SCREENSAVER:
     case ADDON_PVRDLL:
+    case ADDON_GAMEDLL:
       { // begin temporary platform handling for Dlls
         // ideally platforms issues will be handled by C-Pluff
         // this is not an attempt at a solution
@@ -155,6 +160,12 @@ AddonPtr CAddonMgr::Factory(const cp_extension_t *props)
         {
 #ifdef HAS_PVRCLIENTS
           return AddonPtr(new CPVRClient(props));
+#endif
+        }
+        else if (type == ADDON_GAMEDLL)
+        {
+#if defined(HAS_GAMECLIENTS)
+          return AddonPtr(new CGameClient(props));
 #endif
         }
         else
@@ -615,6 +626,10 @@ AddonPtr CAddonMgr::AddonFromProps(AddonProps& addonProps)
       return AddonPtr(new CAddonLibrary(addonProps));
     case ADDON_PVRDLL:
       return AddonPtr(new CPVRClient(addonProps));
+#ifdef HAS_GAMECLIENTS
+    case ADDON_GAMEDLL:
+      return AddonPtr(new CGameClient(addonProps));
+#endif
     case ADDON_REPOSITORY:
       return AddonPtr(new CRepository(addonProps));
     default:
